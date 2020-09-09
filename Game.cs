@@ -25,8 +25,24 @@ namespace HelloWorld
 
             End();
         }
+        
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //RNG Example:
+        // Random random;
+        //random = new Random();
+        //int randomNumber = random.Next(0,1);
+        //if(randomNumber == 0)
+        //{
+        //   kill player
+        //}
+        //else
+        //{
+        //   heal player
+        //}
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //This function handles the battles for our ladder. roomNum is used to update the our opponent to be the enemy in the current room. 
         //turnCount is used to keep track of how many turns it took the player to beat the enemy
+
         bool StartBattle(int roomNum, ref int turnCount)
         {
             //initialize default enemy stats
