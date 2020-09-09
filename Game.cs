@@ -18,14 +18,14 @@ namespace HelloWorld
         {
             Start();
 
-            while(_gameOver == false)
+            while (_gameOver == false)
             {
                 Update();
             }
 
             End();
         }
-        
+
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //RNG Example:
         // Random random;
@@ -72,7 +72,7 @@ namespace HelloWorld
                     }
                 case 2:
                     {
-                        
+
                         enemyHealth = 200;
                         enemyAttack = 40;
                         enemyDefense = 10;
@@ -82,7 +82,7 @@ namespace HelloWorld
             }
 
             //Loops until the player or the enemy is dead
-            while(_playerHealth >= 0 && enemyHealth >= 0)
+            while (_playerHealth >= 0 && enemyHealth >= 0)
             {
                 //Displays the stats for both charactersa to the screen before the player takes their turn
                 PrintStats(_playerName, _playerHealth, _playerDamage, _playerDefense);
@@ -93,7 +93,7 @@ namespace HelloWorld
                 GetInput(out input, "Attack", "Defend");
                 Console.WriteLine();
                 //If input is 1, the player wants to attack. By default the enemy blocks any incoming attack
-                if(input == '1')
+                if (input == '1')
                 {
                     BlockAttack(ref enemyHealth, _playerDamage, enemyDefense);
                     Console.WriteLine(" You dealt " + (_playerDamage - enemyDefense) + " damage.");
@@ -118,12 +118,34 @@ namespace HelloWorld
                 Console.ReadKey();
 
                 turnCount++;
-                
+
             }
             //Return whether or not our player died
             return _playerHealth >= 0;
 
         }
+
+        //struct Player
+        //{
+        //  public int health;
+        //  public float speed;
+        //  
+        //
+        //}
+
+        //void Shop()
+        //{
+            //char input;
+            //PrintStats(_playerName, _playerHealth, _playerDamage, _playerDefense);
+            //Console.WriteLine("\nYou encountered a strange old man! He wants to help you out and brings you to his shop.");
+            //Console.WriteLine("\n What would you like to buy or use?");
+            //"Stand on the healing pad", "Buy the weird potion", "Most powerful twig", "The most boring basic sword");
+            
+            //case '1':
+
+
+
+        //}
         //Decrements the health of a character. The attack value is subtracted by that character's defense
         void BlockAttack(ref int opponentHealth, int attackVal, int opponentDefense)
         {
